@@ -1,4 +1,4 @@
-<html><body background="a.jpg"><?php define('DB_HOST', 'localhost'); 
+<html><body background=""><?php define('DB_HOST', 'localhost'); 
 define('DB_NAME', 'sign'); 
 define('DB_USER','root'); 
 define('DB_PASSWORD','');
@@ -12,9 +12,9 @@ $db=mysql_select_db(DB_NAME,$con) or die("Failed to connect to MySQL: " . mysql_
 $row = mysql_fetch_array($query) or die(mysql_error()); 
 if(!empty($row['user_name']) AND !empty($row['password']))
 	{ $_SESSION['user_name'] = $row['password'];
-echo '<h1> Welcome to vehicle Registration>><h1>'.'<a href="register.html">New vehicle registration</a>' 
+echo 'Welcome to admin' 
 	; }
-else { echo "SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY..."; } } }
+else { echo 'SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY...'; } } }
 if(isset($_POST['submit'])) { SignIn(); }
 ?>
 </body>

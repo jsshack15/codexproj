@@ -5,8 +5,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <link rel="stylesheet" type="text/css" href="css/default.css"/>
     </head>
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["vehicleName"].value;
+    if (x == null || x == "") {
+        alert(" Entry must be filled out");
+return false;
+}
+
+    }
+
+</script>
     <body bgcolor="blue">    
-        <form  method="post" action="register.php" class="register">
+        <form  method="post" name="myForm" action="register.php" onsubmit="return validateForm()" class="register">
             <h1>Registration</h1>
             <fieldset class="row1">
                 <legend>Vehicle Details
@@ -75,7 +86,7 @@
                 </legend>
                 <p>
                     <label>Gender *</label>
-                    <input type="radio" value="radio"/>
+                    <input type="radio" name="gender value="radio"/>
                     <label class="gender">Male</label>
                     <input type="radio" value="radio"/>
                     <label class="gender">Female</label>
@@ -83,7 +94,7 @@
                 <p>
                     <label>Birthdate *
                     </label>
-                    <select class="date">
+                    <select class="date" name="date">
                         <option value="1">01
                         </option>
                         <option value="2">02
@@ -179,10 +190,13 @@
                     <label>Nationality *
                     </label>
                     <select>
-                        <option value="0">
+                        <option value="0">India
                         </option>
                         <option value="1">United States
                         </option>
+                        <option value="2">Australia
+                        </option>
+
                     </select>
                 </p>
                 <p>
@@ -212,7 +226,9 @@
                     <label>Allow partners to send me personalized offers and related services</label>
                 </p>
             </fieldset>
-            <div><button class="button">Register &raquo;</button></div>
+            <div><input type="submit" value="Submit"></div>
+           
+
         </form>
     </body>
 </html>
